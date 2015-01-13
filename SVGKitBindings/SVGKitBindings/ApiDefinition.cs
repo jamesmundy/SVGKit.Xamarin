@@ -602,7 +602,7 @@ namespace SVGKit {
 
 		// @property (nonatomic) SVGRect viewBox;
 		[Export ("viewBox")]
-		SVGRect ViewBox { get; set; }
+		SVGRectElement ViewBox { get; set; }
 
 		// @property (retain, nonatomic) SVGAnimatedPreserveAspectRatio * preserveAspectRatio;
 		[Export ("preserveAspectRatio", ArgumentSemantic.Retain)]
@@ -815,6 +815,7 @@ namespace SVGKit {
 		SVGKSource SourceFromRelativePath (string path);
 	}
 
+
 	// @interface SVGSVGElement : SVGElement <DocumentCSS, SVGFitToViewBox, ConverterSVGToCALayer>
 	[BaseType (typeof (SVGElement))]
 	interface SVGSVGElement : DocumentCSS, SVGFitToViewBox, ConverterSVGToCALayer {
@@ -845,7 +846,7 @@ namespace SVGKit {
 
 		// @property (readonly, nonatomic) SVGRect viewport;
 		[Export ("viewport")]
-		SVGRect Viewport { get; }
+		SVGRectElement Viewport { get; }
 
 		// @property (readonly, nonatomic) float pixelUnitToMillimeterX;
 		[Export ("pixelUnitToMillimeterX")]
@@ -885,7 +886,7 @@ namespace SVGKit {
 
 		// @property (readonly, nonatomic) SVGRect requestedViewport;
 		[Export ("requestedViewport")]
-		SVGRect RequestedViewport { get; }
+		SVGRectElement RequestedViewport { get; }
 
 		// @property (readonly) double aspectRatioFromWidthPerHeight;
 		[Export ("aspectRatioFromWidthPerHeight")]
@@ -933,19 +934,19 @@ namespace SVGKit {
 
 		// -(NodeList *)getIntersectionList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getIntersectionList:referenceElement:")]
-		NodeList GetIntersectionList (SVGRect rect, SVGElement referenceElement);
+		NodeList GetIntersectionList (SVGRectElement rect, SVGElement referenceElement);
 
 		// -(NodeList *)getEnclosureList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getEnclosureList:referenceElement:")]
-		NodeList GetEnclosureList (SVGRect rect, SVGElement referenceElement);
+		NodeList GetEnclosureList (SVGRectElement rect, SVGElement referenceElement);
 
 		// -(BOOL)checkIntersection:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkIntersection:rect:")]
-		bool CheckIntersection (SVGElement element, SVGRect rect);
+		bool CheckIntersection (SVGRectElement element, SVGRectElement rect);
 
 		// -(BOOL)checkEnclosure:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkEnclosure:rect:")]
-		bool CheckEnclosure (SVGElement element, SVGRect rect);
+		bool CheckEnclosure (SVGRectElement element, SVGRectElement rect);
 
 		// -(void)deselectAll;
 		[Export ("deselectAll")]
@@ -973,7 +974,7 @@ namespace SVGKit {
 
 		// -(SVGRect)createSVGRect;
 		[Export ("createSVGRect")]
-		SVGRect CreateSVGRect ();
+		SVGRectElement CreateSVGRect ();
 
 		// -(SVGTransform *)createSVGTransform;
 		[Export ("createSVGTransform")]
