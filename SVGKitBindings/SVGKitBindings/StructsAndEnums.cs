@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SVGKit {
+namespace SVGKitBindings {
 
 	public enum DOMNodeType : uint {
 		_ELEMENT_NODE = 1,

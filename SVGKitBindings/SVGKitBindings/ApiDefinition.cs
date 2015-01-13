@@ -7,7 +7,7 @@ using UIKit;
 using CoreAnimation;
 using CoreGraphics;
 
-namespace SVGKit {
+namespace SVGKitBindings {
 
 	// @interface DOMHelperUtilities : NSObject
 	[BaseType (typeof (NSObject))]
