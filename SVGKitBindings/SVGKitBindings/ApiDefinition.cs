@@ -4,6 +4,8 @@ using System.Drawing;
 using ObjCRuntime;
 using Foundation;
 using UIKit;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace SVGKit {
 
@@ -31,10 +33,6 @@ namespace SVGKit {
 		// -(id)initType:(DOMNodeType)nt name:(NSString *)n value:(NSString *)v;
 		[Export ("initType:name:value:")]
 		IntPtr Constructor (DOMNodeType nt, string n, string v);
-
-		// -(id)initType:(DOMNodeType)nt name:(NSString *)n inNamespace:(NSString *)nsURI;
-		[Export ("initType:name:inNamespace:")]
-		IntPtr Constructor (DOMNodeType nt, string n, string nsURI);
 
 		// -(id)initType:(DOMNodeType)nt name:(NSString *)n value:(NSString *)v inNamespace:(NSString *)nsURI;
 		[Export ("initType:name:value:inNamespace:")]
@@ -172,7 +170,7 @@ namespace SVGKit {
 
 	// @interface NodeList : NSObject <NSFastEnumeration>
 	[BaseType (typeof (NSObject))]
-	interface NodeList : NSFastEnumeration {
+	interface NodeList {
 
 		// @property (readonly) long length;
 		[Export ("length")]
@@ -260,50 +258,6 @@ namespace SVGKit {
 		bool HasAttributeNS (string namespaceURI, string localName);
 	}
 
-	// @interface  (Node)
-	interface  Node {
-
-		// @property (readwrite, retain, nonatomic) NSString * nodeName;
-		[Export ("nodeName", ArgumentSemantic.Retain)]
-		string NodeName { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NSString * nodeValue;
-		[Export ("nodeValue", ArgumentSemantic.Retain)]
-		string NodeValue { get; set; }
-
-		// @property (readwrite, nonatomic) DOMNodeType nodeType;
-		[Export ("nodeType")]
-		DOMNodeType NodeType { get; set; }
-
-		// @property (assign, readwrite, nonatomic) Node * parentNode;
-		[Export ("parentNode", ArgumentSemantic.UnsafeUnretained)]
-		Node ParentNode { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NodeList * childNodes;
-		[Export ("childNodes", ArgumentSemantic.Retain)]
-		NodeList ChildNodes { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NamedNodeMap * attributes;
-		[Export ("attributes", ArgumentSemantic.Retain)]
-		NamedNodeMap Attributes { get; set; }
-
-		// @property (assign, readwrite, nonatomic) Document * ownerDocument;
-		[Export ("ownerDocument", ArgumentSemantic.UnsafeUnretained)]
-		Document OwnerDocument { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NSString * namespaceURI;
-		[Export ("namespaceURI", ArgumentSemantic.Retain)]
-		string NamespaceURI { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NSString * prefix;
-		[Export ("prefix", ArgumentSemantic.Retain)]
-		string Prefix { get; set; }
-
-		// @property (readwrite, retain, nonatomic) NSString * localName;
-		[Export ("localName", ArgumentSemantic.Retain)]
-		string LocalName { get; set; }
-	}
-
 	// @interface CSSValue : NSObject
 	[BaseType (typeof (NSObject))]
 	interface CSSValue {
@@ -329,9 +283,9 @@ namespace SVGKit {
 		[Export ("cssText", ArgumentSemantic.Retain)]
 		string CssText { get; set; }
 
-		// @property (retain, nonatomic) CSSStyleSheet * parentStyleSheet;
-		[Export ("parentStyleSheet", ArgumentSemantic.Retain)]
-		CSSStyleSheet ParentStyleSheet { get; set; }
+//		// @property (retain, nonatomic) CSSStyleSheet * parentStyleSheet;
+//		[Export ("parentStyleSheet", ArgumentSemantic.Retain)]
+//		CSSStyleSheet ParentStyleSheet { get; set; }
 
 		// @property (retain, nonatomic) CSSRule * parentRule;
 		[Export ("parentRule", ArgumentSemantic.Retain)]
@@ -519,16 +473,6 @@ namespace SVGKit {
 		CGPath PathForShapeInRelativeCoords { get; set; }
 	}
 
-	// @interface  (BaseClassForAllSVGBasicShapes)
-	[Category]
-	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
-	interface  {
-
-		// @property (readwrite, nonatomic) CGPathRef pathForShapeInRelativeCoords;
-		[Export ("pathForShapeInRelativeCoords")]
-		CGPath PathForShapeInRelativeCoords { get; set; }
-	}
-
 	// @interface SVGEllipseElement : BaseClassForAllSVGBasicShapes
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGEllipseElement {
@@ -587,9 +531,9 @@ namespace SVGKit {
 		[Export ("title", ArgumentSemantic.Retain)]
 		string Title { get; set; }
 
-		// @property (retain, nonatomic) MediaList * media;
-		[Export ("media", ArgumentSemantic.Retain)]
-		MediaList Media { get; set; }
+//		// @property (retain, nonatomic) MediaList * media;
+//		[Export ("media", ArgumentSemantic.Retain)]
+//		MediaList Media { get; set; }
 	}
 
 	// @interface StyleSheetList : NSObject
@@ -658,7 +602,7 @@ namespace SVGKit {
 
 		// @property (nonatomic) SVGRect viewBox;
 		[Export ("viewBox")]
-		ViewBox { get; set; }
+		SVGRect ViewBox { get; set; }
 
 		// @property (retain, nonatomic) SVGAnimatedPreserveAspectRatio * preserveAspectRatio;
 		[Export ("preserveAspectRatio", ArgumentSemantic.Retain)]
@@ -901,7 +845,7 @@ namespace SVGKit {
 
 		// @property (readonly, nonatomic) SVGRect viewport;
 		[Export ("viewport")]
-		Viewport { get; }
+		SVGRect Viewport { get; }
 
 		// @property (readonly, nonatomic) float pixelUnitToMillimeterX;
 		[Export ("pixelUnitToMillimeterX")]
@@ -941,7 +885,7 @@ namespace SVGKit {
 
 		// @property (readonly, nonatomic) SVGRect requestedViewport;
 		[Export ("requestedViewport")]
-		RequestedViewport { get; }
+		SVGRect RequestedViewport { get; }
 
 		// @property (readonly) double aspectRatioFromWidthPerHeight;
 		[Export ("aspectRatioFromWidthPerHeight")]
@@ -989,27 +933,27 @@ namespace SVGKit {
 
 		// -(NodeList *)getIntersectionList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getIntersectionList:referenceElement:")]
-		NodeList GetIntersectionList ( rect, SVGElement referenceElement);
+		NodeList GetIntersectionList (SVGRect rect, SVGElement referenceElement);
 
 		// -(NodeList *)getEnclosureList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getEnclosureList:referenceElement:")]
-		NodeList GetEnclosureList ( rect, SVGElement referenceElement);
+		NodeList GetEnclosureList (SVGRect rect, SVGElement referenceElement);
 
 		// -(BOOL)checkIntersection:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkIntersection:rect:")]
-		bool CheckIntersection (SVGElement element,  rect);
+		bool CheckIntersection (SVGElement element, SVGRect rect);
 
 		// -(BOOL)checkEnclosure:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkEnclosure:rect:")]
-		bool CheckEnclosure (SVGElement element,  rect);
+		bool CheckEnclosure (SVGElement element, SVGRect rect);
 
 		// -(void)deselectAll;
 		[Export ("deselectAll")]
 		void DeselectAll ();
 
-		// -(SVGNumber)createSVGNumber;
-		[Export ("createSVGNumber")]
-		CreateSVGNumber ();
+//		// -(SVGNumber)createSVGNumber;
+//		[Export ("createSVGNumber")]
+//		SVGNumber CreateSVGNumber ();
 
 		// -(SVGLength *)createSVGLength;
 		[Export ("createSVGLength")]
@@ -1029,7 +973,7 @@ namespace SVGKit {
 
 		// -(SVGRect)createSVGRect;
 		[Export ("createSVGRect")]
-		CreateSVGRect ();
+		SVGRect CreateSVGRect ();
 
 		// -(SVGTransform *)createSVGTransform;
 		[Export ("createSVGTransform")]
@@ -1143,7 +1087,7 @@ namespace SVGKit {
 
 	// @interface NamedNodeMap : NSObject <NSCopying>
 	[BaseType (typeof (NSObject))]
-	interface NamedNodeMap : NSCopying {
+	interface NamedNodeMap {
 
 		// @property (readonly) unsigned long length;
 		[Export ("length")]
@@ -1339,13 +1283,6 @@ namespace SVGKit {
 	[BaseType (typeof (NSObject))]
 	interface SVGKParserExtension {
 
-	}
-
-	// @protocol SVGKParserExtension <NSObject>
-	[Protocol, Model]
-	[BaseType (typeof (NSObject))]
-	interface SVGKParserExtension {
-
 		// @required -(NSArray *)supportedNamespaces;
 		[Export ("supportedNamespaces")]
 		[Abstract]
@@ -1422,24 +1359,6 @@ namespace SVGKit {
 		// -(void)addSAXError:(NSError *)saxError;
 		[Export ("addSAXError:")]
 		void AddSAXError (NSError saxError);
-	}
-
-	// @interface  (SVGElement)
-	[Category]
-	[BaseType (typeof (SVGElement))]
-	interface  {
-
-		// +(BOOL)shouldStoreContent;
-		[Static, Export ("shouldStoreContent")]
-		bool ShouldStoreContent ();
-
-		// -(void)loadDefaults;
-		[Export ("loadDefaults")]
-		void LoadDefaults ();
-
-		// -(void)postProcessAttributesAddingErrorsTo:(SVGKParseResult *)parseResult;
-		[Export ("postProcessAttributesAddingErrorsTo:")]
-		void PostProcessAttributesAddingErrorsTo (SVGKParseResult parseResult);
 	}
 
 	// @interface SVGClipPathElement : SVGElement <SVGTransformable, SVGStylable>
