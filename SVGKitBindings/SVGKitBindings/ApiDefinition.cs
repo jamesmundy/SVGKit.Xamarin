@@ -10,6 +10,7 @@ using CoreGraphics;
 namespace SVGKitBindings {
 
 	// @interface DOMHelperUtilities : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface DOMHelperUtilities {
 
@@ -23,6 +24,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Node : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface Node {
 
@@ -140,6 +142,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Attr : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface Attr {
 
@@ -169,6 +172,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface NodeList : NSObject <NSFastEnumeration>
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface NodeList {
 
@@ -182,6 +186,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Element : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface Element {
 
@@ -259,6 +264,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface CSSValue : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface CSSValue {
 
@@ -272,6 +278,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface CSSRule : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface CSSRule {
 
@@ -293,6 +300,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface CSSStyleDeclaration : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface CSSStyleDeclaration {
 
@@ -333,8 +341,8 @@ namespace SVGKitBindings {
 		string Item (nint index);
 	}
 
-	// @protocol SVGStylable <NSObject>
-	[Protocol, Model]
+	// @protocol SVGStylable <NSObject> removed model from here
+	[Model]
 	[BaseType (typeof (NSObject))]
 	interface SVGStylable {
 
@@ -353,6 +361,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGLength : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGLength {
 
@@ -398,6 +407,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGElement : Element <SVGStylable>
+	[Protocol]
 	[BaseType (typeof (Element))]
 	interface SVGElement : SVGStylable {
 
@@ -439,7 +449,7 @@ namespace SVGKitBindings {
 	}
 
 	// @protocol ConverterSVGToCALayer <NSObject>
-	[Protocol, Model]
+	[Model]
 	[BaseType (typeof (NSObject))]
 	interface ConverterSVGToCALayer {
 
@@ -455,7 +465,7 @@ namespace SVGKitBindings {
 	}
 
 	// @protocol SVGTransformable <NSObject>
-	[Protocol, Model]
+	[Model]
 	[BaseType (typeof (NSObject))]
 	interface SVGTransformable {
 
@@ -465,6 +475,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface BaseClassForAllSVGBasicShapes : SVGElement <SVGStylable, SVGTransformable, ConverterSVGToCALayer>
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface BaseClassForAllSVGBasicShapes : SVGStylable, SVGTransformable, ConverterSVGToCALayer {
 
@@ -474,6 +485,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGEllipseElement : BaseClassForAllSVGBasicShapes
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGEllipseElement {
 
@@ -495,6 +507,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGCircleElement : SVGEllipseElement
+	[Protocol]
 	[BaseType (typeof (SVGEllipseElement))]
 	interface SVGCircleElement {
 
@@ -504,6 +517,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface StyleSheet : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface StyleSheet {
 
@@ -537,6 +551,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface StyleSheetList : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface StyleSheetList {
 
@@ -570,6 +585,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGPreserveAspectRatio : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGPreserveAspectRatio {
 
@@ -583,6 +599,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGAnimatedPreserveAspectRatio : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGAnimatedPreserveAspectRatio {
 
@@ -610,6 +627,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGViewSpec : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGViewSpec {
 
@@ -635,6 +653,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGAngle : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGAngle {
 
@@ -664,6 +683,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGMatrix : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGMatrix {
 
@@ -737,6 +757,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGPoint : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGPoint {
 
@@ -754,6 +775,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGTransform : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGTransform {
 
@@ -791,6 +813,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKSource : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKSource {
 
@@ -817,6 +840,7 @@ namespace SVGKitBindings {
 
 
 	// @interface SVGSVGElement : SVGElement <DocumentCSS, SVGFitToViewBox, ConverterSVGToCALayer>
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGSVGElement : DocumentCSS, SVGFitToViewBox, ConverterSVGToCALayer {
 
@@ -994,6 +1018,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface CharacterData : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface CharacterData {
 
@@ -1027,6 +1052,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Comment : CharacterData
+	[Protocol]
 	[BaseType (typeof (CharacterData))]
 	interface Comment {
 
@@ -1036,6 +1062,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Text : CharacterData
+	[Protocol]
 	[BaseType (typeof (CharacterData))]
 	interface Text {
 
@@ -1049,6 +1076,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface CDATASection : Text
+	[Protocol]
 	[BaseType (typeof (Text))]
 	interface CDATASection {
 
@@ -1058,18 +1086,21 @@ namespace SVGKitBindings {
 	}
 
 	// @interface DocumentFragment : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface DocumentFragment {
 
 	}
 
 	// @interface EntityReference : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface EntityReference {
 
 	}
 
 	// @interface ProcessingInstruction : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface ProcessingInstruction {
 
@@ -1087,6 +1118,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface NamedNodeMap : NSObject <NSCopying>
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface NamedNodeMap {
 
@@ -1128,6 +1160,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface DocumentType : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface DocumentType {
 
@@ -1157,6 +1190,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface AppleSucksDOMImplementation : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface AppleSucksDOMImplementation {
 
@@ -1174,6 +1208,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface Document : Node
+	[Protocol]
 	[BaseType (typeof (Node))]
 	interface Document {
 
@@ -1247,6 +1282,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGDocument : Document
+	[Protocol]
 	[BaseType (typeof (Document))]
 	interface SVGDocument {
 
@@ -1306,6 +1342,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKParseResult : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKParseResult {
 
@@ -1363,6 +1400,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGClipPathElement : SVGElement <SVGTransformable, SVGStylable>
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGClipPathElement : SVGTransformable, SVGStylable {
 
@@ -1380,18 +1418,21 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGDefsElement : SVGElement
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGDefsElement {
 
 	}
 
 	// @interface SVGDescriptionElement : SVGElement
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGDescriptionElement {
 
 	}
 
 	// @interface SVGKParser : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKParser {
 
@@ -1449,6 +1490,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKImage : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKImage {
 
@@ -1594,12 +1636,14 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGGElement : SVGElement <SVGTransformable, SVGStylable, ConverterSVGToCALayer>
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGGElement : SVGTransformable, SVGStylable, ConverterSVGToCALayer {
 
 	}
 
 	// @interface SVGImageElement : SVGElement <SVGTransformable, SVGStylable, ConverterSVGToCALayer, SVGFitToViewBox>
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGImageElement : SVGTransformable, SVGStylable, ConverterSVGToCALayer, SVGFitToViewBox {
 
@@ -1625,6 +1669,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGLineElement : BaseClassForAllSVGBasicShapes
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGLineElement {
 
@@ -1646,24 +1691,28 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGPathElement : BaseClassForAllSVGBasicShapes
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGPathElement {
 
 	}
 
 	// @interface SVGPolygonElement : BaseClassForAllSVGBasicShapes
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGPolygonElement {
 
 	}
 
 	// @interface SVGPolylineElement : BaseClassForAllSVGBasicShapes
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGPolylineElement {
 
 	}
 
 	// @interface SVGRectElement : BaseClassForAllSVGBasicShapes <SVGStylable, SVGTransformable>
+	[Protocol]
 	[BaseType (typeof (BaseClassForAllSVGBasicShapes))]
 	interface SVGRectElement : SVGStylable, SVGTransformable {
 
@@ -1693,12 +1742,14 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGTitleElement : SVGElement
+	[Protocol]
 	[BaseType (typeof (SVGElement))]
 	interface SVGTitleElement {
 
 	}
 
 	// @interface SVGKPattern : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKPattern {
 
@@ -1720,6 +1771,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKImageView : UIView
+	[Protocol]
 	[BaseType (typeof (UIView))]
 	interface SVGKImageView {
 
@@ -1741,6 +1793,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKFastImageView : SVGKImageView
+	[Protocol]
 	[BaseType (typeof (SVGKImageView))]
 	interface SVGKFastImageView {
 
@@ -1762,12 +1815,14 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKLayeredImageView : SVGKImageView
+	[Protocol]
 	[BaseType (typeof (SVGKImageView))]
 	interface SVGKLayeredImageView {
 
 	}
 
 	// @interface SVGKLayer : CALayer
+	[Protocol]
 	[BaseType (typeof (CALayer))]
 	interface SVGKLayer {
 
@@ -1789,6 +1844,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGTextContentElement : SVGElement <SVGStylable>
+	[Protocol,]
 	[BaseType (typeof (SVGElement))]
 	interface SVGTextContentElement : SVGStylable {
 
@@ -1798,6 +1854,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGTextPositioningElement : SVGTextContentElement
+	[Protocol]
 	[BaseType (typeof (SVGTextContentElement))]
 	interface SVGTextPositioningElement {
 
@@ -1823,12 +1880,14 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGTextElement : SVGTextPositioningElement <SVGTransformable, ConverterSVGToCALayer>
+	[Protocol]
 	[BaseType (typeof (SVGTextPositioningElement))]
 	interface SVGTextElement : SVGTransformable, ConverterSVGToCALayer {
 
 	}
 
 	// @interface TinySVGTextAreaElement : SVGTextElement
+	[Protocol]
 	[BaseType (typeof (SVGTextElement))]
 	interface TinySVGTextAreaElement {
 
@@ -1842,6 +1901,7 @@ namespace SVGKitBindings {
 	}
 
 	// @interface SVGKit : NSObject
+	[Protocol]
 	[BaseType (typeof (NSObject))]
 	interface SVGKit {
 
