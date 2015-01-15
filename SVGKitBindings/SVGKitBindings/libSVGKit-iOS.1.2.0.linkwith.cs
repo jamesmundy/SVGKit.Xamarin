@@ -5,5 +5,5 @@ using ObjCRuntime;
 	LinkTarget.ArmV7 | LinkTarget.Simulator | LinkTarget.Arm64 | LinkTarget.Simulator64, 
 	SmartLink = true,
 	Frameworks="QuartzCore CoreText CoreGraphics CoreImage UIKit",
-	Linkerflags="-lxml2 -ObjC",
+	LinkerFlags="-lxml2 -ObjC",
 	ForceLoad = true)]
