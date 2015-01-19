@@ -1797,6 +1797,10 @@ namespace SVGKitBindings {
 	[BaseType (typeof (SVGKImageView))]
 	interface SVGKFastImageView {
 
+		// -(id)initWithSVGKImage:(SVGKImage *)im;
+		[Export ("initWithSVGKImage:")]
+		IntPtr Constructor (SVGKImage im);
+
 		// @property (nonatomic) CGSize tileRatio;
 		[Export ("tileRatio")]
 		CGSize TileRatio { get; set; }

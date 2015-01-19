@@ -1,7 +1,8 @@
-﻿<Properties StartupItem="Pinpoint.iPhone/SVGKitBindings.TestProject.csproj">
+﻿<Properties StartupItem="SVGKitBindings.TestProject/SVGKitBindings.TestProject.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
   <MonoDevelop.Ide.Workbench ActiveDocument="../SVGKitBindings/SVGKitBindings/obj/Debug/ios/SVGKitBindings/SVGKFastImageView.g.cs">
     <Files>
+      <File FileName="SVGKitBindings.TestProject/MainViewController.cs" Line="4" Column="4" />
       <File FileName="../SVGKitBindings/SVGKitBindings/obj/Debug/ios/SVGKitBindings/SVGKFastImageView.g.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
