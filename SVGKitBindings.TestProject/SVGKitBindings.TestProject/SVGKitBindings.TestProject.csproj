@@ -134,4 +134,7 @@
       <Name>SVGKitBindings</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tester.svg" />
+  </ItemGroup>
 </Project>
