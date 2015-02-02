@@ -37,7 +37,7 @@ namespace SVGKitBindings.TestProject
 			View3.BackgroundColor = UIColour.DarkBlue;
 			View4.BackgroundColor = UIColour.Cream;
 
-			var image = new SVGKImage(NSBundle.MainBundle.BundlePath + "/SVG/LogoWhite.svg");
+			var image = new SVGKImage(NSBundle.MainBundle.BundlePath + "/Tester.svg");
 			var imageView = new SVGKFastImageView(image);
 			View.Add(imageView);
 		}
