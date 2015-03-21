@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="SVGKitBindings.TestProject/SVGKitBindings.TestProject.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.1" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Mike's iPhone 5s" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SVGKitBindings.TestProject/MainViewController.cs">
     <Files>
-      <File FileName="SVGKitBindings.TestProject/MainViewController.cs" Line="1" Column="1" />
-      <File FileName="../SVGKitBindings/SVGKitBindings/obj/Debug/ios/SVGKitBindings/SVGKImage.g.cs" Line="1" Column="1" />
+      <File FileName="SVGKitBindings.TestProject/MainViewController.cs" Line="45" Column="2" />
+      <File FileName="../SVGKitBindings/SVGKitBindings/libSVGKit-iOS.1.2.0.linkwith.cs" Line="1" Column="1" />
+      <File FileName="../SVGKitBindings/SVGKitBindings/ApiDefinition.cs" Line="9" Column="1" />
+      <File FileName="SVGKitBindings.TestProject/Tester.svg" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
