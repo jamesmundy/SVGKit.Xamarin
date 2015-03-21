@@ -111,7 +111,6 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="Tester.svg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -134,5 +133,8 @@
       <Project>{10426354-DAB0-41E8-AD13-39AD55868C3E}</Project>
       <Name>SVGKitBindings</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tester.svg" />
   </ItemGroup>
 </Project>
