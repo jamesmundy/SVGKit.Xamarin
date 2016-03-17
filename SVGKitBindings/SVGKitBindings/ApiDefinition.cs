@@ -619,7 +619,7 @@ namespace SVGKitBindings {
 
 		// @property (nonatomic) SVGRect viewBox;
 		[Export ("viewBox")]
-		SVGRectElement ViewBox { get; set; }
+		RectangleF ViewBox { get; set; }
 
 		// @property (retain, nonatomic) SVGAnimatedPreserveAspectRatio * preserveAspectRatio;
 		[Export ("preserveAspectRatio", ArgumentSemantic.Retain)]
@@ -870,7 +870,7 @@ namespace SVGKitBindings {
 
 		// @property (readonly, nonatomic) SVGRect viewport;
 		[Export ("viewport")]
-		SVGRectElement Viewport { get; }
+		RectangleF Viewport { get; }
 
 		// @property (readonly, nonatomic) float pixelUnitToMillimeterX;
 		[Export ("pixelUnitToMillimeterX")]
@@ -910,7 +910,7 @@ namespace SVGKitBindings {
 
 		// @property (readonly, nonatomic) SVGRect requestedViewport;
 		[Export ("requestedViewport")]
-		SVGRectElement RequestedViewport { get; }
+		RectangleF RequestedViewport { get; }
 
 		// @property (readonly) double aspectRatioFromWidthPerHeight;
 		[Export ("aspectRatioFromWidthPerHeight")]
@@ -958,19 +958,19 @@ namespace SVGKitBindings {
 
 		// -(NodeList *)getIntersectionList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getIntersectionList:referenceElement:")]
-		NodeList GetIntersectionList (SVGRectElement rect, SVGElement referenceElement);
+		NodeList GetIntersectionList (RectangleF rect, SVGElement referenceElement);
 
 		// -(NodeList *)getEnclosureList:(SVGRect)rect referenceElement:(SVGElement *)referenceElement;
 		[Export ("getEnclosureList:referenceElement:")]
-		NodeList GetEnclosureList (SVGRectElement rect, SVGElement referenceElement);
+		NodeList GetEnclosureList (RectangleF rect, SVGElement referenceElement);
 
 		// -(BOOL)checkIntersection:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkIntersection:rect:")]
-		bool CheckIntersection (SVGRectElement element, SVGRectElement rect);
+		bool CheckIntersection (SVGRectElement element, RectangleF rect);
 
 		// -(BOOL)checkEnclosure:(SVGElement *)element rect:(SVGRect)rect;
 		[Export ("checkEnclosure:rect:")]
-		bool CheckEnclosure (SVGRectElement element, SVGRectElement rect);
+		bool CheckEnclosure (SVGRectElement element, RectangleF rect);
 
 		// -(void)deselectAll;
 		[Export ("deselectAll")]
@@ -998,7 +998,7 @@ namespace SVGKitBindings {
 
 		// -(SVGRect)createSVGRect;
 		[Export ("createSVGRect")]
-		SVGRectElement CreateSVGRect ();
+		RectangleF CreateSVGRect ();
 
 		// -(SVGTransform *)createSVGTransform;
 		[Export ("createSVGTransform")]
